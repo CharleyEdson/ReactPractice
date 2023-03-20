@@ -26,7 +26,7 @@ const App = () => {
   const handleCreateBook = (title) => {
     const updatedBooks = [
       ...books,
-      { id: Math.round(Math.random()) * 9999, title: title },
+      { id: Math.round(Math.random()) * 999, title: title },
     ];
 
     setBooks(updatedBooks);
@@ -34,6 +34,7 @@ const App = () => {
 
   return (
     <div className="app">
+        <h1>Reading List</h1>
       <BookList books={books} onDelete={deleteBookById} onEdit={editBookById} />
       <BookCreate onSubmit={handleCreateBook} />
     </div>
