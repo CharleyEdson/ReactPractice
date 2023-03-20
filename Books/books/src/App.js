@@ -26,7 +26,7 @@ const App = () => {
   const handleCreateBook = (title) => {
     const updatedBooks = [
       ...books,
-      { id: Math.round(Math.random()) * 999, title: title },
+      { id: Math.round(Math.random() * 999), title: title },
     ];
 
     setBooks(updatedBooks);
