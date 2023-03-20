@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-function BookEdit({book, onEdit}) {
+function BookEdit({book, onSubmit}) {
 
     const [title, setTitle] = useState(book.title);
 
@@ -12,7 +12,9 @@ function BookEdit({book, onEdit}) {
     const handleSubmit = (event) => {
         event.preventDefault();
         // console.log('New title', title);
-        onEdit(book.id, title);
+        // onEdit(book.id, title);
+        //this is to make edit feature false. The above code was old way
+        onSubmit(book.id, title);
     }
 
     return <form className="book-edit" onSubmit={handleSubmit}>
