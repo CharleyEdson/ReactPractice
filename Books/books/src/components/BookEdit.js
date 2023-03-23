@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-
+import React, { useState, useContext } from 'react';
+import BooksContext from '../context/books';
 
 function BookEdit({book, onSubmit}) {
 
     const [title, setTitle] = useState(book.title);
+    const {editBookById} = useContext(BooksContext)
 
     const handleChange = (event) => {
         setTitle(event.target.value);
@@ -14,7 +15,8 @@ function BookEdit({book, onSubmit}) {
         // console.log('New title', title);
         // onEdit(book.id, title);
         //this is to make edit feature false. The above code was old way
-        onSubmit(book.id, title);
+        onSubmit();
+        editBookById(book.id, title);
     }
 
     return <form className="book-edit" onSubmit={handleSubmit}>
