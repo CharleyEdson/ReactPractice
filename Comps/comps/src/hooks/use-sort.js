@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-
+import React, { useState } from "react";
 
 function useSort(data, config) {
   const [sortOrder, setSortOrder] = useState(null);
@@ -48,7 +47,7 @@ function useSort(data, config) {
     sortBy,
     sortedData,
     setSortColumn,
-  }
+  };
 }
 
 export default useSort;

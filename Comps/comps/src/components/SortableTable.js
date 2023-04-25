@@ -4,7 +4,10 @@ import useSort from "../hooks/use-sort";
 
 function SortableTable(props) {
   const { config, data } = props;
-  const { sortOrder, sortBy, sortedData, setSortColumn } = useSort(data, config);
+  const { sortOrder, sortBy, sortedData, setSortColumn } = useSort(
+    data,
+    config
+  );
 
   const updatedConfig = config.map((column) => {
     if (!column.sortValue) {
